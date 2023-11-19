@@ -1,7 +1,7 @@
 v2board:
-  apiHost: https://example.com
-  apiKey: 123456789
-  nodeID: 1
+  apiHost: http://面板域名
+  apiKey: 节点密钥
+  nodeID: 节点ID
 tls:
   type: tls
   cert: /etc/hysteria/example.com.crt
@@ -12,4 +12,8 @@ trafficStats:
   listen: 127.0.0.1:7653
 acl: 
   inline: 
-    - reject(pincong.rocks)
+    - reject(10.0.0.0/8)
+    - reject(172.16.0.0/12)
+    - reject(192.168.0.0/16)
+    - reject(127.0.0.0/8)
+    - reject(fc00::/7)
